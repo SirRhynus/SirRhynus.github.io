@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html 
+    lang="nl" 
+    vocab="http://rdfs.org/resume-rdf/cv.rdfs#" 
+    typeof="CV" 
+    prefix="schema: https://schema.org/"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rien Boydens - CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section property="aboutPerson" typeof="schema:Person" resource="#me">
+        <h1 property="name">Rien Boydens</h1> 
+        <div class="contact flex row">
+            <a property="schema:email" href="mailto:rien.boydens@gmail.com"><img src="assets/email_100x100.webp"> <span>rien.boydens@gmail.com</span></a>
+            <a href="https://www.linkedin.com/in/rien-boydens-6172a0203/"><img src="assets/linkedin_100x100.webp"> <span>Rien Boydens</span></a>
+            <a href="https://github.com/SirRhynus"><img src="assets/github_light_100x100.webp"> <span>SirRhynus</span></a>
+        </div>
+        <p class="about">Ik ben gedreven door geografische data, haar applicaties en vooral ook hoe hoe deze gedeeld kan worden via het Web.</p>
+    </section>
+    <section id="technical-skills">
+        <h2>Technische Vaardigheden</h2>
+        <ul>
+            <li>
+                <h3>GIS software</h4>
+                <ul>
+                    <li property="hasSkill"><span property="skillName">QGIS</span></li>
+                    <li property="hasSkill"><span property="skillName">GDAL/OGR</span></li>
+                    <li property="hasSkill"><span property="skillName">ESRI ArcGIS</span></li>
+                    <li property="hasSkill"><span property="skillName">GRASS GIS</span></li>
+                    <li property="hasSkill"><span property="skillName">SAGA</span></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Programmeertalen</h4>
+                <ul>
+                    <li property="hasSkill"><span property="skillName">Python</span>: geopandas, rasterio, fiona, gdal</li>
+                    <li property="hasSkill"><span property="skillName">Web</span>: HTML, CSS, JavaScript/TypeScript, NodeJS, VueJS, React, Svelte</li>
+                    <li property="hasSkill"><span property="skillName">SQL</span>: Postgres/PostGIS, SQLite/Spatialite/GeoPackage</li>
+                    <li property="hasSkill"><span property="skillName">Semantisch Web/Linked Data</span>: RDF, SPARQL, Solid</li>
+                    <li>Andere: <span propery="hasSkill"><span propery="skillName">C</span></span>/<span propery="hasSkill"><span propery="skillName">C++</span>, 
+                        <span propery="hasSkill"><span propery="skillName">Java</span></span>, 
+                        <span propery="hasSkill"><span propery="skillName">Rust</span></span></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Grafische vaardigheden</h4>
+                <ul>
+                    <li property="hasSkill"><span propery="skillName">Cartografie</span></li>
+                    <li property="hasSkill"><span propery="skillName">Fotobewerking</span></li>
+                    <li property="hasSkill"><span propery="skillName">Videobewerking</span></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="personal-skills">
+        <h2>Persoonlijke Vaardigheden</h2>
+        <ul>
+            <li property="hasSkill">
+                <h3 property="skillName">Probleemoplossend</h4>
+                <p>Programmeerervaring.</p>
+            </li>
+            <li property="hasSkill">
+                <h3 property="skillName">Sociaalvaardig</h4>
+                <p>Voorzitter van een studentenvereniging.</p>
+            </li>
+            <li property="hasSkill">
+                <h3 property="skillName">Verantwoordelijk</h4>
+                <p>Moderator van een online GIS forum.</p>
+            </li>
+            <li property="hasSkill">
+                <h3 property="skillName">Communicatief en creatief</h4>
+                <p>Speler en Gamemaster van Tabletop RPGs zoals D&D.</p>
+            </li>
+        </ul>
+    </section>
+    <section id="experiences">
+        <h2>Werkervaring</h2>
+        <ol>
+            <li data-year="Aug 2022" property="hasWorkHistory">
+                <hidden property="startDate">2022-08-01</hidden>
+                <hidden property="endDate">2022-08-31</hidden>
+                <h4><strong propery="jobTitle">Jobstudent Strandbibliotheek</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+            </li>
+            <li data-year="Nov-Dec 2021">
+                <hidden property="startDate">2021-11-15</hidden>
+                <hidden property="endDate">2021-12-24</hidden>
+                <h4><strong property="jobTitle">Stagair Geomaticus</strong> - <a property="employedIn" href="https://www.routeyou.com/">RouteYou</a></h4>
+            </li>
+            <li data-year="Jul-Aug 2021">
+                <hidden property="startDate">2021-07-01</hidden>
+                <hidden property="endDate">2021-08-31</hidden>
+                <h4><strong property="jobTitle">Jobstudent Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+            </li>
+            <li data-year="Aug 2020">
+                <hidden property="startDate">2020-08-01</hidden>
+                <hidden property="endDate">2021-08-15</hidden>
+                <h4><strong>Jobstudent Strandcoach/Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+            </li>
+        </ol>
+    </section>
+    <section id="education">
+        <h2>Opleidingen</h2>
+        <ol>
+            <li property="hasEducation" data-year="2020-2023">
+                <hidden property="eduStartDate">2020-09-27</hidden>
+                <h4><strong property="degreeType">MSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, Faculteit Wetenschappen, Vakgroep Geografie</h4>
+                <p><strong>Majoren:</strong> <span property="eduMajor">GIS & Cartografie</span> en <span property="eduMajor">Fysische Geografie</span></p>
+                <p><strong>Titel Masterproef:</strong> "Less Is More: Evaluatie van een nieuwe PPGIS-methode om geografische data te verzamelen"</p>
+            </li>
+            <li property="hasEducation" data-year="2017-2021">
+                <hidden property="eduStartDate">2017-09-24</hidden>
+                <hidden property="eduEndDate">2021-07-01</hidden>
+                <h4><strong property="degreeType">BSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, Faculteit Wetenschappen, Vakgroep Geografie</h4>
+                <p><strong>Titel Bachelorproef:</strong> "Technieken voor de visuele analyse van massieve datasets trajectdata"</p>
+            </li>
+        </ol>
+    </section>
+    <section id="languages">
+        <h2>Talen</h2>
+        <ul resource="#me">
+            <li><strong property="schema:knowsLanguage">Nederlands</strong> - moedertaal</li>
+            <li><strong property="schema:knowsLanguage">Engels</strong> - zeer goed</li>
+            <li><strong property="schema:knowsLanguage">Frans</strong> - gemiddeld</li>
+        </ul>
+    </section>
+    <section>
+        <quote>"Never Stop Learning Because Life Never Stops Teaching" - Kirill Korshikov.</quote>    
+    </section>
+</body>
+</html>
