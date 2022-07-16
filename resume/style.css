@@ -138,7 +138,7 @@ quote {
 }
 
 #technical-skills > ul {
-    padding: 0;
+    padding-left: calc((40px - 1em));
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
