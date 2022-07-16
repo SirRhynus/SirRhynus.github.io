@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html 
+    lang="en" 
+    vocab="http://rdfs.org/resume-rdf/cv.rdfs#" 
+    typeof="CV" 
+    prefix="schema: https://schema.org/"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rien Boydens - CV</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <section property="aboutPerson" typeof="schema:Person" resource="#me">
+        <h1 property="name">Rien Boydens</h1> 
+        <div class="contact flex row">
+            <a class="email" property="schema:email" href="mailto:rien.boydens@gmail.com">rien.boydens@gmail.com</a>
+            <a class="linkedin" href="https://www.linkedin.com/in/rien-boydens-6172a0203/">Rien Boydens</a>
+            <a class="github" href="https://github.com/SirRhynus">SirRhynus</a>
+        </div>
+        <p class="about">I'm driven by geographical data, her applications, and especially how it can be shared across the Web.</p>
+    </section>
+    <section id="technical-skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>
+                <h3>GIS software</h4>
+                <ul>
+                    <li property="hasSkill"><span property="skillName">QGIS</span></li>
+                    <li property="hasSkill"><span property="skillName">GDAL/OGR</span></li>
+                    <li property="hasSkill"><span property="skillName">ESRI ArcGIS</span></li>
+                    <li property="hasSkill"><span property="skillName">GRASS GIS</span></li>
+                    <li property="hasSkill"><span property="skillName">SAGA</span></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Programming Languages</h4>
+                <ul>
+                    <li property="hasSkill"><span property="skillName">Python</span>: 
+                        <span property="hasSkill"><span property="skillName">geopandas</span></span>, 
+                        <span property="hasSkill"><span property="skillName">rasterio</span></span>, 
+                        <span property="hasSkill"><span property="skillName">fiona</span></span>, 
+                        <span property="hasSkill"><span property="skillName">gdal</span></span>
+                    </li>
+                    <li property="hasSkill"><span property="skillName">Web</span>: 
+                        <span property="hasSkill"><span property="skillName">HTML</span></span>, 
+                        <span property="hasSkill"><span property="skillName">CSS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">JavaScript</span></span>/<span property="hasSkill"><span property="skillName">TypeScript</span></span>, 
+                        <span property="hasSkill"><span property="skillName">NodeJS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">VueJS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">React</span></span>, 
+                        <span property="hasSkill"><span property="skillName">Svelte</span></span>
+                    </li>
+                    <li property="hasSkill"><span property="skillName">SQL</span>: 
+                        <span property="hasSkill"><span property="skillName">Postgres</span></span>/<span property="hasSkill"><span property="skillName">PostGIS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">SQLite</span></span>/<span property="hasSkill"><span property="skillName">Spatialite</span></span>
+                    </li>
+                    <li><span property="hasSkill"><span property="skillName">Semantisch Web</span></span>/<span property="hasSkill"><span property="skillName">Linked Data</span></span>: 
+                        <span property="hasSkill"><span property="skillName">RDF</span></span>, 
+                        <span property="hasSkill"><span property="skillName">SPARQL</span></span>, 
+                        <span property="hasSkill"><span property="skillName">Solid</span></span>
+                    </li>
+                    <li>Other: 
+                        <span propery="hasSkill"><span propery="skillName">C</span></span>/<span propery="hasSkill"><span propery="skillName">C++</span>, 
+                        <span propery="hasSkill"><span propery="skillName">Java</span></span>, 
+                        <span propery="hasSkill"><span propery="skillName">Rust</span></span></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Graphical skills</h4>
+                <ul>
+                    <li property="hasSkill"><span propery="skillName">Cartography</span></li>
+                    <li property="hasSkill"><span propery="skillName">Photo editing</span></li>
+                    <li property="hasSkill"><span propery="skillName">Video editing</span></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="personal-skills">
+        <h2>Personal Skills</h2>
+        <ul>
+            <li property="hasSkill">
+                <h3 property="skillName">Problem solving</h4>
+                <p>Programming experience.</p>
+            </li>
+            <li property="hasSkill">
+                <h3 property="skillName">Socially capable</h4>
+                <p>Head of a student association.</p>
+            </li>
+            <li property="hasSkill">
+                <h3 property="skillName">Responsible</h4>
+                <p>Moderator of an online GIS forum.</p>
+            </li>
+            <li property="hasSkill">
+                <h3 property="skillName">Communication & Creativity</h4>
+                <p>Player and Gamemaster of Tabletop RPGs like D&D.</p>
+            </li>
+        </ul>
+    </section>
+    <section id="experiences">
+        <h2>Work Experiences</h2>
+        <ol>
+            <li data-year="Aug 2022" property="hasWorkHistory">
+                <hidden property="startDate">2022-08-01</hidden>
+                <hidden property="endDate">2022-08-31</hidden>
+                <h4><strong propery="jobTitle">Student Beach Library</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+            </li>
+            <li data-year="Nov-Dec 2021">
+                <hidden property="startDate">2021-11-15</hidden>
+                <hidden property="endDate">2021-12-24</hidden>
+                <h4><strong property="jobTitle">Intern Geomaticus</strong> - <a property="employedIn" href="https://www.routeyou.com/">RouteYou</a></h4>
+            </li>
+            <li data-year="Jul-Aug 2021">
+                <hidden property="startDate">2021-07-01</hidden>
+                <hidden property="endDate">2021-08-31</hidden>
+                <h4><strong property="jobTitle">Student Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+            </li>
+            <li data-year="Aug 2020">
+                <hidden property="startDate">2020-08-01</hidden>
+                <hidden property="endDate">2021-08-15</hidden>
+                <h4><strong>Student Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+            </li>
+        </ol>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <ol>
+            <li property="hasEducation" data-year="2020-2023">
+                <hidden property="eduStartDate">2020-09-27</hidden>
+                <h4><strong property="degreeType">MSc. in the Geography & Geomatics</strong> - <a property="studiedIn" href="https://www.ugent.be/">Ghent University</a>, <a href="https://www.ugent.be/we/">Faculty of Sciences</a>, <a href="http://geografie.ugent.be/">Department of Geography</a></h4>
+                <p><em>Majors:</em> <span property="eduMajor">GIS & Cartography</span> and <span property="eduMajor">Physical Geography</span></p>
+                <p><em>Title Master Thesis:</em> "Less Is More: Evaluation of a novel PPGIS-method to collect geographical data"</p>
+            </li>
+            <li property="hasEducation" data-year="2017-2021">
+                <hidden property="eduStartDate">2017-09-24</hidden>
+                <hidden property="eduEndDate">2021-07-01</hidden>
+                <h4><strong property="degreeType">BSc. in the Geography & Geomatics</strong> - <a property="studiedIn" href="https://www.ugent.be/">Ghent University</a>, <a href="https://www.ugent.be/we/">Faculty of Sciences</a>, <a href="http://geografie.ugent.be/">Department of Geography</a></h4>
+                <p><em>Title Bachelor Thesis:</em> "Techniques for the visual analysis of massive datasets of trajectories"</p>
+            </li>
+        </ol>
+    </section>
+    <section id="languages">
+        <h2>Languages</h2>
+        <ul resource="#me">
+            <li><strong property="schema:knowsLanguage">Dutch</strong> - mother tongue</li>
+            <li><strong property="schema:knowsLanguage">English</strong> - very good</li>
+            <li><strong property="schema:knowsLanguage">French</strong> - average</li>
+        </ul>
+    </section>
+    <section>
+        <hr>
+        <quote>"Never Stop Learning Because Life Never Stops Teaching" - Kirill Korshikov.</quote>    
+    </section>
+</body>
+</html>

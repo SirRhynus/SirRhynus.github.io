@@ -93,7 +93,7 @@ ol > li[data-year]::marker {
 }
 
 .contact > * {
-    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .contact > *::before {
