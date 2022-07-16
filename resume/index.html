@@ -15,9 +15,9 @@
     <section property="aboutPerson" typeof="schema:Person" resource="#me">
         <h1 property="name">Rien Boydens</h1> 
         <div class="contact flex row">
-            <a property="schema:email" href="mailto:rien.boydens@gmail.com"><img src="assets/email_100x100.webp"> <span>rien.boydens@gmail.com</span></a>
-            <a href="https://www.linkedin.com/in/rien-boydens-6172a0203/"><img src="assets/linkedin_100x100.webp"> <span>Rien Boydens</span></a>
-            <a href="https://github.com/SirRhynus"><img src="assets/github_light_100x100.webp"> <span>SirRhynus</span></a>
+            <a class="email" property="schema:email" href="mailto:rien.boydens@gmail.com">rien.boydens@gmail.com</a>
+            <a class="linkedin" href="https://www.linkedin.com/in/rien-boydens-6172a0203/">Rien Boydens</a>
+            <a class="github" href="https://github.com/SirRhynus">SirRhynus</a>
         </div>
         <p class="about">Ik ben gedreven door geografische data, haar applicaties en vooral ook hoe hoe deze gedeeld kan worden via het Web.</p>
     </section>
@@ -37,11 +37,32 @@
             <li>
                 <h3>Programmeertalen</h4>
                 <ul>
-                    <li property="hasSkill"><span property="skillName">Python</span>: geopandas, rasterio, fiona, gdal</li>
-                    <li property="hasSkill"><span property="skillName">Web</span>: HTML, CSS, JavaScript/TypeScript, NodeJS, VueJS, React, Svelte</li>
-                    <li property="hasSkill"><span property="skillName">SQL</span>: Postgres/PostGIS, SQLite/Spatialite/GeoPackage</li>
-                    <li property="hasSkill"><span property="skillName">Semantisch Web/Linked Data</span>: RDF, SPARQL, Solid</li>
-                    <li>Andere: <span propery="hasSkill"><span propery="skillName">C</span></span>/<span propery="hasSkill"><span propery="skillName">C++</span>, 
+                    <li property="hasSkill"><span property="skillName">Python</span>: 
+                        <span property="hasSkill"><span property="skillName">geopandas</span></span>, 
+                        <span property="hasSkill"><span property="skillName">rasterio</span></span>, 
+                        <span property="hasSkill"><span property="skillName">fiona</span></span>, 
+                        <span property="hasSkill"><span property="skillName">gdal</span></span>
+                    </li>
+                    <li property="hasSkill"><span property="skillName">Web</span>: 
+                        <span property="hasSkill"><span property="skillName">HTML</span></span>, 
+                        <span property="hasSkill"><span property="skillName">CSS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">JavaScript</span></span>/<span property="hasSkill"><span property="skillName">TypeScript</span></span>, 
+                        <span property="hasSkill"><span property="skillName">NodeJS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">VueJS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">React</span></span>, 
+                        <span property="hasSkill"><span property="skillName">Svelte</span></span>
+                    </li>
+                    <li property="hasSkill"><span property="skillName">SQL</span>: 
+                        <span property="hasSkill"><span property="skillName">Postgres</span></span>/<span property="hasSkill"><span property="skillName">PostGIS</span></span>, 
+                        <span property="hasSkill"><span property="skillName">SQLite</span></span>/<span property="hasSkill"><span property="skillName">Spatialite</span></span>
+                    </li>
+                    <li><span property="hasSkill"><span property="skillName">Semantisch Web</span></span>/<span property="hasSkill"><span property="skillName">Linked Data</span></span>: 
+                        <span property="hasSkill"><span property="skillName">RDF</span></span>, 
+                        <span property="hasSkill"><span property="skillName">SPARQL</span></span>, 
+                        <span property="hasSkill"><span property="skillName">Solid</span></span>
+                    </li>
+                    <li>Andere: 
+                        <span propery="hasSkill"><span propery="skillName">C</span></span>/<span propery="hasSkill"><span propery="skillName">C++</span>, 
                         <span propery="hasSkill"><span propery="skillName">Java</span></span>, 
                         <span propery="hasSkill"><span propery="skillName">Rust</span></span></li>
                 </ul>
@@ -107,15 +128,15 @@
         <ol>
             <li property="hasEducation" data-year="2020-2023">
                 <hidden property="eduStartDate">2020-09-27</hidden>
-                <h4><strong property="degreeType">MSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, Faculteit Wetenschappen, Vakgroep Geografie</h4>
-                <p><strong>Majoren:</strong> <span property="eduMajor">GIS & Cartografie</span> en <span property="eduMajor">Fysische Geografie</span></p>
-                <p><strong>Titel Masterproef:</strong> "Less Is More: Evaluatie van een nieuwe PPGIS-methode om geografische data te verzamelen"</p>
+                <h4><strong property="degreeType">MSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, <a href="https://www.ugent.be/we/">Faculteit Wetenschappen</a>, <a href="http://geografie.ugent.be/">Vakgroep Geografie</a></h4>
+                <p><em>Majoren:</em> <span property="eduMajor">GIS & Cartografie</span> en <span property="eduMajor">Fysische Geografie</span></p>
+                <p><em>Titel Masterproef:</em> "Less Is More: Evaluatie van een nieuwe PPGIS-methode om geografische data te verzamelen"</p>
             </li>
             <li property="hasEducation" data-year="2017-2021">
                 <hidden property="eduStartDate">2017-09-24</hidden>
                 <hidden property="eduEndDate">2021-07-01</hidden>
-                <h4><strong property="degreeType">BSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, Faculteit Wetenschappen, Vakgroep Geografie</h4>
-                <p><strong>Titel Bachelorproef:</strong> "Technieken voor de visuele analyse van massieve datasets trajectdata"</p>
+                <h4><strong property="degreeType">BSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, <a href="https://www.ugent.be/we/">Faculteit Wetenschappen</a>, <a href="http://geografie.ugent.be/">Vakgroep Geografie</a></h4>
+                <p><em>Titel Bachelorproef:</em> "Technieken voor de visuele analyse van massieve datasets trajectdata"</p>
             </li>
         </ol>
     </section>
@@ -128,6 +149,7 @@
         </ul>
     </section>
     <section>
+        <hr>
         <quote>"Never Stop Learning Because Life Never Stops Teaching" - Kirill Korshikov.</quote>    
     </section>
 </body>

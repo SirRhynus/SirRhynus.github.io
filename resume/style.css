@@ -1,6 +1,8 @@
-@font-face {
-    font-family: "Style Script";
-    src: url(assets/StyleScript-Regular.ttf);
+:root {
+    --primary: #05445E;
+    --secondary: #189AB4;
+    --tertiary: #75E6DA;
+    --quaterny: #D4F1F4;
 }
 
 .flex {
@@ -32,6 +34,24 @@ h1 {
     margin-bottom: 5px;
     font-size: xx-large;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary);
+}
+
+h2 {
+    position: relative;
+    padding-left: 8px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-bottom: 1px solid var(--secondary);
+    border-left: 5px solid var(--secondary);
+    border-bottom-left-radius: 1rem;
 }
 
 h3 {
@@ -57,6 +77,12 @@ a:hover {
     text-decoration: dotted underline;
 }
 
+section > ul > li::marker {
+    content: "✓ ";
+    font-weight: bold;
+    color: var(--secondary);
+}
+
 ol {
     margin-left: 5em;
 }
@@ -70,13 +96,33 @@ ol > li[data-year]::marker {
     margin-left: 1rem;
 }
 
-.contact img {
-    width: 1rem;
+.contact > *::before {
+    content: "";
+    display: inline-block;
+    padding-right: 0.3em;
+    width: 1em;
+    height: 1em;
+    background-size: 1em;
+    background-repeat: no-repeat;
+}
+
+.contact > .email::before {
+    background-image: url('assets/email_100x100.webp');
+}
+
+.contact > .linkedin::before {
+    background-image: url('assets/linkedin_100x100.webp');
+}
+
+.contact > .github::before {
+    background-image: url('assets/github_light_100x100.webp');
 }
 
 quote {
+    position: relative;
     display: block;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: x-large;
     text-align: end;
+    color: var(--secondary);
 }
