@@ -25,9 +25,45 @@ body {
     margin: 2em auto;
 }
 
+@media print {
+    body {
+        margin: unset;
+    }
+}
+
+@page {
+    margin: 2cm;
+    size: A4;
+}
+
+header {
+    max-width: calc(21cm - 2in);
+    margin: auto;
+    text-align: right;
+}
+
+header.print {
+    display: none;
+}
+
+header.display {
+    display: block;
+}
+
+@media print {
+    header.print {
+        display: block;
+    }
+
+    header.display {
+        display: none;
+    }
+}
+
 section {
     max-width: calc(21cm - 2in);
     margin: auto;
+    break-inside: avoid-page;
 }
 
 h1 {
@@ -106,7 +142,7 @@ ul > li {
     margin-right: 1rem;
 }
 
-.contact > *::before {
+.contact > *::before, #print::before {
     content: "";
     display: inline-block;
     padding-right: 0.3em;
@@ -116,15 +152,19 @@ ul > li {
     background-repeat: no-repeat;
 }
 
-.contact > .email::before {
+#print::before {
+    background-image: url('assets/print_100x100.webp');
+}
+
+.contact > #email::before {
     background-image: url('assets/email_100x100.webp');
 }
 
-.contact > .linkedin::before {
+.contact > #linkedin::before {
     background-image: url('assets/linkedin_100x100.webp');
 }
 
-.contact > .github::before {
+.contact > #github::before {
     background-image: url('assets/github_light_100x100.webp');
 }
 

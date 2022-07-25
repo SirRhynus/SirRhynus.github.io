@@ -12,12 +12,18 @@
     <link rel="stylesheet" href="/resume/style.css">
 </head>
 <body>
+    <header class="print">
+        This document is also available online at <a href="https://sirrhynus.github.io/resume">https://sirrhynus.github.io/resume</a>.
+    </header>
+    <header class="display">
+        <a href="javascript:window.print()" type="button" id="print">Print this document.</a>
+    </header>
     <section property="aboutPerson" typeof="schema:Person" resource="#me">
         <h1 property="name">Rien Boydens</h1> 
         <div class="contact flex row">
-            <a class="email" property="schema:email" href="mailto:rien.boydens@gmail.com">rien.boydens@gmail.com</a>
-            <a class="linkedin" href="https://www.linkedin.com/in/rien-boydens-6172a0203/">Rien Boydens</a>
-            <a class="github" href="https://github.com/SirRhynus">SirRhynus</a>
+            <a id="email" property="schema:email" href="mailto:rien.boydens@gmail.com">rien.boydens@gmail.com</a>
+            <a id="linkedin" href="https://www.linkedin.com/in/rien-boydens-6172a0203/">Rien Boydens</a>
+            <a id="github" href="https://github.com/SirRhynus">SirRhynus</a>
         </div>
         <p class="about">I'm driven by geographical data, its applications, and especially how it can be shared across the Web.</p>
     </section>
