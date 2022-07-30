@@ -150,6 +150,9 @@ ul > li {
     height: 1em;
     background-size: 1em;
     background-repeat: no-repeat;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    -webkit-color-adjust: exact !important;
 }
 
 #print::before {
