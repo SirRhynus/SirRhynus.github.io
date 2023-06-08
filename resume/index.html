@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Rien Boydens - CV</title>
+    <style>
+        :not(body)[lang] {
+            display: none;
+        }
+
+        body :lang(en) {
+            display: revert;
+        }
+
+        body[lang]:not(:lang(en)) :lang(en) {
+            display: none;
+        }
+
+        body:lang(nl) :lang(nl) {
+            display: revert;
+        }
+    </style>
     <link rel="stylesheet" href="/resume/style.css">
     <script>
         const supported_lang = ['en', 'nl'];        
@@ -16,11 +33,9 @@
         }
     </script>
     <script defer>
-        setTimeout(() => {
-            console.log(params.get('lang'));
-            const lang = supported_lang.some(lang => params.get('lang').indexOf(lang) == 0) ? params.get('lang') : 'en';
-            document.querySelectorAll(`[lang]:not(:lang(${lang}))`).forEach(elem => elem.remove());
-        }, 0);
+        if (supported_lang.some(lang => params.get('lang').indexOf(lang) == 0))
+            // The body for some reason still doesn't exist here
+            setTimeout(() => document.body.lang = params.get('lang'), 0);
     </script>
 </head>
 <body  
