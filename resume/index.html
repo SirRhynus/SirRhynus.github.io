@@ -3,14 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <title>Rien Boydens - CV</title>
-</head>
-<body>
+    <link rel="stylesheet" href="/resume/style.css">
     <script>
-        var lang = navigator.language || navigator.userLanguage;
-        if (lang.indexOf('nl') == 0)
-            window.location = 'nl/';
-        else
-            window.location = 'en/';
+        const supported_lang = ['en', 'nl'];        
+        const params = new URLSearchParams(location.search)
+        if (!params.has('lang')) {
+            const lang = navigator.language || navigator.userLanguage;
+            if (supported_lang.some(l => lang.indexOf(l) == 0)) {
+                params.append('lang', lang);
+                window.location.search = params.toString();
+            }
+        }
     </script>
+    <script defer>
+        setTimeout(() => {
+            console.log(params.get('lang'));
+            const lang = supported_lang.some(lang => params.get('lang').indexOf(lang) == 0) ? params.get('lang') : 'en';
+            document.querySelectorAll(`[lang]:not(:lang(${lang}))`).forEach(elem => elem.remove());
+        }, 0);
+    </script>
+</head>
+<body  
+    vocab="http://rdfs.org/resume-rdf/cv.rdfs#" 
+    prefix="schema: https://schema.org/"
+    resource="."
+    typeof="CV" 
+>
+    <header class="print" lang="en">
+        This document is also available online at <a href="https://sirrhynus.github.io/resume">https://sirrhynus.github.io/resume</a>.
+    </header>
+    <header class="print" lang="nl">
+        Dit document is ook online beschikbaar: <a href="https://sirrhynus.github.io/resume">https://sirrhynus.github.io/resume</a>.
+    </header>
+    <header class="display">
+        <a href="javascript:window.print()" type="button" id="print" lang="en">Print this document.</a>
+        <a href="javascript:window.print()" type="button" id="print" lang="nl">Druk dit document af.</a>
+    </header>
+    
+    <section property="aboutPerson" typeof="schema:Person" resource="..#me">
+        <h1 property="name" lang="en">Rien Boydens</h1>
+        <h1 property="name" lang="nl">Rien Boydens</h1>
+        <div class="contact flex row">
+            <a id="email" property="schema:email" href="mailto:rien.boydens@gmail.com">rien.boydens@gmail.com</a>
+            <a id="linkedin" href="https://www.linkedin.com/in/rien-boydens-6172a0203/">Rien Boydens</a>
+            <a id="github" href="https://github.com/SirRhynus">SirRhynus</a>
+        </div>
+        <p class="about" lang="en">I'm driven by geographical data, its applications, and especially how it can be shared across the Web.</p>
+        <p class="about" lang="nl">Ik ben gedreven door geografische data, haar applicaties en vooral ook hoe deze gedeeld kan worden via het Web.</p>
+    </section>
+    <section id="technical-skills">
+        <h2 lang="en">Technical Skills</h2>
+        <h2 lang="nl">Technische Vaardigheden</h2>
+        <ul>
+            <li>
+                <h3 lang="en">GIS software</h3>
+                <h3 lang="nl">GIS software</h3>
+                <ul rel="hasSkill">
+                    <li typeof="Skill"><span property="skillName">QGIS</span></li>
+                    <li typeof="Skill"><span property="skillName">GDAL/OGR</span></li>
+                    <li typeof="Skill"><span property="skillName">FME</span></li>
+                    <li typeof="Skill"><span property="skillName">ESRI ArcGIS</span></li>
+                    <li typeof="Skill"><span property="skillName">GRASS GIS</span></li>
+                    <li typeof="Skill"><span property="skillName">SAGA</span></li>
+                </ul>
+            </li>
+            <li>
+                <h3 lang="en">Programming Languages</h3>
+                <h3 lang="nl">Programmeertalen</h3>
+                <ul rel="hasSkill">
+                    <li>
+                        <span typeof="Skill"><span property="skillName">Python</span></span>: 
+                        <span typeof="Skill"><span property="skillName">geopandas</span></span>, 
+                        <span typeof="Skill"><span property="skillName">rasterio</span></span>, 
+                        <span typeof="Skill"><span property="skillName">fiona</span></span>, 
+                        <span typeof="Skill"><span property="skillName">gdal</span></span>
+                    </li>
+                    <li>
+                        <span typeof="Skill"><span property="skillName">Web</span></span>: 
+                        <span typeof="Skill"><span property="skillName">HTML</span></span>, 
+                        <span typeof="Skill"><span property="skillName">CSS</span></span>, 
+                        <span typeof="Skill"><span property="skillName">JavaScript</span></span>/<span typeof="Skill"><span property="skillName">TypeScript</span></span>, 
+                        <span typeof="Skill"><span property="skillName">NodeJS</span></span>, 
+                        <span typeof="Skill"><span property="skillName">VueJS</span></span>, 
+                        <span typeof="Skill"><span property="skillName">React</span></span>, 
+                        <span typeof="Skill"><span property="skillName">Svelte</span></span>
+                    </li>
+                    <li>
+                        <span typeof="Skill"><span property="skillName">SQL</span></span>: 
+                        <span typeof="Skill"><span property="skillName">Postgres</span></span>/<span typeof="Skill"><span property="skillName">PostGIS</span></span>, 
+                        <span typeof="Skill"><span property="skillName">SQLite</span></span>/<span typeof="Skill"><span property="skillName">Spatialite</span></span>
+                    </li>
+                    <li>
+                        <span typeof="Skill"><span property="skillName">Semantic Web</span></span>/<span typeof="Skill"><span property="skillName">Linked Data</span></span>: 
+                        <span typeof="Skill"><span property="skillName">RDF</span></span>, 
+                        <span typeof="Skill"><span property="skillName">SPARQL</span></span>, 
+                        <span typeof="Skill"><span property="skillName">Solid</span></span>
+                    </li>
+                    <li><span lang="en">Other</span>: 
+                        <span typeof="Skill"><span property="skillName">C</span></span>/<span typeof="Skill"><span property="skillName">C++</span></span>, 
+                        <span typeof="Skill"><span property="skillName">Java</span></span>, 
+                        <span typeof="Skill"><span property="skillName">Rust</span></span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3 lang="en">Graphical skills</h3>
+                <h3 lang="nl">Grafische vaardigheden</h3>
+                <ul rel="hasSkill">
+                    <li typeof="Skill">
+                        <span property="skillName" lang="en">Cartography</span>
+                        <span property="skillName" lang="nl">Cartografie</span>
+                    </li>
+                    <li typeof="Skill">
+                        <span property="skillName" lang="en">Photo editing</span>
+                        <span property="skillName" lang="nl">Fotobewerking</span>
+                    </li>
+                    <li typeof="Skill">
+                        <span property="skillName" lang="en">Video editing</span>
+                        <span property="skillName" lang="nl">Videobewerking</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="personal-skills">
+        <h2 lang="en">Personal Skills</h2>
+        <h2 lang="nl">Persoonlijke Vaardigheden</h2>
+        <ul rel="hasSkill">
+            <li typeof="Skill">
+                <h3 property="skillName" lang="en">Problem solving</h3>
+                <h3 property="skillName" lang="nl">Probleemoplossend</h3>
+                <p lang="en">Programming experience.</p>
+                <p lang="nl">Programmeerervaring.</p>
+            </li>
+            <li typeof="Skill">
+                <h3 property="skillName" lang="en">Socially capable</h3>
+                <h3 property="skillName" lang="nl">Sociaalvaardig</h3>
+                <p lang="en">Head of a student association.</p>
+                <p lang="nl">Voorzitter van een studentenvereniging.</p>
+            </li>
+            <li typeof="Skill">
+                <h3 property="skillName" lang="en">Responsible</h3>
+                <h3 property="skillName" lang="nl">Verantwoordelijk</h3>
+                <p lang="en">Moderator of an online GIS forum.</p>
+                <p lang="nl">Moderator van een online GIS forum.</p>
+            </li>
+            <li typeof="Skill">
+                <h3 property="skillName" lang="en">Communication & Creativity</h3>
+                <h3 property="skillName" lang="nl">Communicatief & Creatief</h3>
+                <p lang="en">Player and Gamemaster of Tabletop RPGs like D&D.</p>
+                <p lang="nl">Speler en Gamemaster van Tabletop RPGs zoals D&D.</p>
+            </li>
+        </ul>
+    </section>
+    <section id="experiences">
+        <h2 lang="en">Work Experiences</h2>
+        <h2 lang="nl">Werkervaring</h2>
+        <ol rel="hasWorkHistory">
+            <li data-year="Aug 2023" typeof="WorkHistory">
+                <hidden property="startDate" datatype="xsd:date">2023-08-01</hidden>
+                <hidden property="endDate" datatype="xsd:date">2023-08-31</hidden>
+                <h4 lang="en"><strong property="jobTitle">Student Beach Library</strong> - <a property="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+                <h4 lang="nl"><strong property="jobTitle">Jobstudent Strandbibliotheek</strong> - <a property="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+                <p lang="en">Helping people and keeping track which items are lent out.</p>
+                <p lang="nl">Mensen helpen en bijhouden wat er uitgeleend is.</p>
+            </li>
+            <li data-year="2022-2023" typeof="WorkHistory">
+                <hidden property="startDate" datatype="xsd:date">2022-10-18</hidden>
+                <hidden property="endDate" datatype="xsd:date">2023-06-30</hidden>
+                <h4 lang="en"><strong property="jobTitle">Student Geomatics</strong> - <a property="employedIn" href="https://www.routeyou.com/">RouteYou</a></h4>
+                <h4 lang="nl"><strong property="jobTitle">Jobstudent Geomaticus</strong> - <a property="employedIn" href="https://www.routeyou.com/">RouteYou</a></h4>
+                <p lang="en">Python scripting and Bash scripting to execute various tasks like Web Scraping and DTM correction.</p>
+                <p lang="nl">Python scripting en Bash scripting om verschillende taken uit te voeren zoals Web scraping en DTM correcties.</p>
+            </li>
+            <li data-year="Aug 2022" typeof="WorkHistory">
+                <hidden property="startDate" datatype="xsd:date">2022-08-01</hidden>
+                <hidden property="endDate" datatype="xsd:date">2022-08-31</hidden>
+                <h4 lang="en"><strong propery="jobTitle">Student Beach Library</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+                <h4 lang="nl"><strong propery="jobTitle">Jobstudent Strandbibliotheek</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+            </li>
+            <li data-year="Nov-Dec 2021" typeof="WorkHistory">
+                <hidden property="startDate" datatype="xsd:date">2021-11-15</hidden>
+                <hidden property="endDate" datatype="xsd:date">2021-12-24</hidden>
+                <h4 lang="en"><strong property="jobTitle">Intern Geomatics</strong> - <a property="employedIn" href="https://www.routeyou.com/">RouteYou</a></h4>
+                <h4 lang="nl"><strong property="jobTitle">Stagair Geomaticus</strong> - <a property="employedIn" href="https://www.routeyou.com/">RouteYou</a></h4>
+                <p lang="en">Applied problem solving skills to design a map layer showing the reliability of roads based on the routes that go through it using Python, SQL and GDAL.</p>
+                <p lang="nl">Probleemoplossend werken om een kaartlaag te maken van de betrouwbaarheid van wegen op basis van routes die erdoor lopen met behulp van Python, SQL en GDAL.</p>
+            </li>
+            <li data-year="Jul-Aug 2021" typeof="WorkHistory">
+                <hidden property="startDate" datatype="xsd:date">2021-07-01</hidden>
+                <hidden property="endDate" datatype="xsd:date">2021-08-31</hidden>
+                <h4 lang="en"><strong property="jobTitle">Student Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+                <h4 lang="nl"><strong property="jobTitle">Jobstudent Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+                <p lang="en">Worked responsibly to clearly communicate current Covid rules towards people.</p>
+                <p lang="nl">Verantwoordelijkheid uitoefenen om duidelijk de huidige Covid maatregelen te communiceren naar de mensen toe.</p>
+            </li>
+            <li data-year="Aug 2020" typeof="WorkHistory">
+                <hidden property="startDate" datatype="xsd:date">2020-08-01</hidden>
+                <hidden property="endDate" datatype="xsd:date">2021-08-15</hidden>
+                <h4 lang="en"><strong>Student Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">City of Nieuwpoort</a></h4>
+                <h4 lang="nl"><strong>Jobstudent Strandcoach/Steward</strong> - <a propery="employedIn" href="https://www.nieuwpoort.be/">Stad Nieuwpoort</a></h4>
+                <p lang="en">Worked responsibly to clearly communicate current Covid rules towards people.</p>
+                <p lang="nl">Verantwoordelijkheid uitoefenen om duidelijk de huidige Covid maatregelen te communiceren naar de mensen toe.</p>
+            </li>
+        </ol>
+    </section>
+    <section id="education">
+        <h2 lang="en">Education</h2>
+        <h2 lang="nl">Opleidingen</h2>
+        <ol rel="hasEducation">
+            <li data-year="2020-2023" typeof="Education">
+                <hidden property="eduStartDate" datatype="xsd:date">2020-09-27</hidden>
+                <h4 lang="en"><strong property="degreeType">MSc. in the Geography & Geomatics</strong> - <a property="studiedIn" href="https://www.ugent.be/">Ghent University</a>, <a href="https://www.ugent.be/we/">Faculty of Sciences</a>, <a href="http://geografie.ugent.be/">Department of Geography</a></h4>
+                <h4 lang="nl"><strong property="degreeType">MSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, <a href="https://www.ugent.be/we/">Faculteit Wetenschappen</a>, <a href="http://geografie.ugent.be/">Vakgroep Geografie</a></h4>
+                <p lang="en"><em>Majors:</em> <span property="eduMajor">GIS & Cartography</span> and <span property="eduMajor">Physical Geography</span></p>
+                <p lang="nl"><em>Majoren:</em> <span property="eduMajor">GIS & Cartografie</span> en <span property="eduMajor">Fysische Geografie</span></p>
+                <p lang="en"><em>Title Master Thesis:</em> "Less Is More: Evaluation of a novel PPGIS-method to collect geographical data" (WIP)</p>
+                <p lang="nl"><em>Titel Masterproef:</em> "Less Is More: Evaluatie van een nieuwe PPGIS-methode om geografische data te verzamelen" (WIP)</p>
+            </li>
+            <li data-year="2017-2021" typeof="Education">
+                <hidden property="eduStartDate" datatype="xsd:date">2017-09-24</hidden>
+                <hidden property="eduGradDate" datatype="xsd:date">2021-07-01</hidden>
+                <h4 lang="en"><strong property="degreeType">BSc. in the Geography & Geomatics</strong> - <a property="studiedIn" href="https://www.ugent.be/">Ghent University</a>, <a href="https://www.ugent.be/we/">Faculty of Sciences</a>, <a href="http://geografie.ugent.be/">Department of Geography</a></h4>
+                <h4 lang="nl"><strong property="degreeType">BSc. in de Geografie & Geomatica</strong> - <a property="studiedIn" href="https://www.ugent.be/">Universiteit Gent</a>, <a href="https://www.ugent.be/we/">Faculteit Wetenschappen</a>, <a href="http://geografie.ugent.be/">Vakgroep Geografie</a></h4>
+                <p lang="en"><em>Title Bachelor Thesis:</em> <a href="/accomplishments/bachelorproef.pdf">"Techniques for the visual analysis of massive datasets of trajectories" <sup>nl</sup></a></p>
+                <p lang="nl"><em>Titel Bachelorproef:</em> <a href="/accomplishments/bachelorproef.pdf">"Technieken voor de visuele analyse van massieve datasets trajectdata"</a></p>
+            </li>
+        </ol>
+    </section>
+    <section id="languages">
+        <h2 lang="en">Languages</h2>
+        <h2 lang="nl">Talen</h2>
+        <ul resource="..#me">
+            <li lang="en"><strong property="schema:knowsLanguage">Dutch</strong> - mother tongue</li>
+            <li lang="nl"><strong property="schema:knowsLanguage">Nederlands</strong> - moedertaal</li>
+            <li lang="en"><strong property="schema:knowsLanguage">English</strong> - very good</li>
+            <li lang="nl"><strong property="schema:knowsLanguage">Engels</strong> - zeer goed</li>
+            <li lang="en"><strong property="schema:knowsLanguage">French</strong> - average</li>
+            <li lang="nl"><strong property="schema:knowsLanguage">Frans</strong> - gemiddeld</li>
+        </ul>
+    </section>
+    <section>
+        <hr>
+        <quote>"Never Stop Learning Because Life Never Stops Teaching" - Kirill Korshikov.</quote>    
+    </section>
 </body>
 </html>
