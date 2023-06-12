@@ -176,15 +176,19 @@ quote {
 
 #technical-skills > ul {
     padding-left: calc((40px - 1em));
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-flow: row dense;
+    gap: .5em .5em;
 }
 
 #technical-skills > ul > li {
-    flex-grow: 1;
     max-width: 40%;
     margin-left: 1em;
+}
+
+#technical-skills > ul > li.large {
+    grid-row: auto / span 2;
 }
 
 #technical-skills > ul > li > ul {
